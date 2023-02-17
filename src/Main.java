@@ -10,17 +10,26 @@ public class Main {
                 animals.add(new Cat(i,random.nextInt(1,10)));
                 animals.add(new Dog(i,random.nextInt(1,10)));
         }
-        int counter=3;
+        int counter=4;
         int count=0;
+        int counter2=0;
         for (int i = 0; i < animals.size(); i++) {
             if(animals.get(i) instanceof Dog){
                 count++;
                 if(count==counter){
-                    animals.add(i,new Mouse(random.nextInt(1,18), random.nextInt(1,10)));
+                    counter2++;
+                    animals.add(i,new Mouse(counter2, random.nextInt(1,10)));
                     counter+=4;
                 }
         }
+
         }
+        int counterAge=0;
+        for (int i = 0; i < animals.size(); i++) {
+            counterAge+=animals.get(i).getAge();
+
+        }
+        System.out.println(counterAge);
         for (int i = 0; i < animals.size(); i++) {
             if(animals.get(i) instanceof Mouse ){
                 if(animals.get(i+1)instanceof Cat){
